@@ -47,7 +47,7 @@ public class Strategy {
     public static class ProductContext{
         private DiscountStrategy strategy;
 
-        public ProductContext(DiscountStrategy strategy){
+        public void setProductContext(DiscountStrategy strategy){
             this.strategy = strategy;
         }
 
@@ -59,13 +59,17 @@ public class Strategy {
     public static void main(String[] args) {
         double price = 50.0;
 
-        ProductContext noDiscount = new ProductContext(new NoDiscount());// return 50
-        ProductContext fixedDiscount = new ProductContext(new FixedDiscount(10.5));// return 39.5
-        ProductContext percentageDiscount = new ProductContext(new PercentageDiscount(50));// return 25
+        ProductContext context = new ProductContext();
 
-        System.out.println("No discount: " + noDiscount.check(price));
-        System.out.println("Fixed discount: " + fixedDiscount.check(price));
-        System.out.println("Percentage discount: " + percentageDiscount.check(price));
+        context.setProductContext(new NoDiscount());
+        System.out.println("No discount: " + context.check(price)); // return 50
+
+        context.setProductContext(new FixedDiscount(10.5));
+        System.out.println("Fixed discount: " + context.check(price)); // return 39.5
+
+        context.setProductContext(new PercentageDiscount(50));
+        System.out.println("Percentage discount: " + context.check(price)); // return 25
+
     }
 
 }
