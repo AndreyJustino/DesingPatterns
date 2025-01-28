@@ -1,4 +1,4 @@
-package factoryMethod;
+package criacao;
 
 public class FactoryMethod {
 

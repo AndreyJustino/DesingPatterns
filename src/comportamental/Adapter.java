@@ -1,4 +1,4 @@
-package adapter;
+package comportamental;
 
 public class Adapter {
 

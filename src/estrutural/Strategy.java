@@ -1,4 +1,4 @@
-package strategy;
+package estrutural;
 
 public class Strategy {
     public interface DiscountStrategy{ // estrategia generica
