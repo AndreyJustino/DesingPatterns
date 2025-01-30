@@ -66,7 +66,9 @@ Diz que uma classe deve estar aberta para ser estendida, mas fechada para ser mo
 Diz que uma subclasse deve ser substituível por sua classe base sem quebrar o código. Se você tem uma classe Pai e uma classe Filha, deve ser possível trocar a classe Pai pela Filha sem que o programa pare de funcionar ou tenha comportamentos inesperados.
 
 ✔ Se uma classe herda outra, ela deve poder substituí-la sem causar problemas.
+
 ✔ Evite criar classes que herdam comportamentos que não podem cumprir.
+
 ✔ Se precisar, use composição ao invés de herança.
 
 ---
